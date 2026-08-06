@@ -41,6 +41,11 @@ configuration:
         highlight: rgba(143, 159, 169, 0.15)
         textHighlight: "#b3aa0288"
 plugins:
+  - source: "./quartz/plugins/local/location-weather"
+    enabled: true
+    layout:
+      position: header
+      priority: 5
   - source: "@quartz-community/created-modified-date"
     enabled: true
     options:
