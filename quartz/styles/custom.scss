@@ -26,61 +26,45 @@
   }
 }
 
-// ========== 标题统一黑色 ==========
-h1, h2, h3, h4, h5, h6 {
-  color: #1a1a1a !important;
-  font-weight: 600;
-}
-
-h1 { font-size: 1.9rem; }
-h2 { font-size: 1.55rem; }
-h3 { font-size: 1.3rem; }
-h4 { font-size: 1.15rem; }
-h5, h6 { font-size: 1.05rem; }
-
-// ========== 正文内容不同颜色层次 ==========
+// ========== 正文内容颜色层次 ==========
 article {
-  // 普通段落 - 深灰
   & > p {
-    color: #3a3a3a;
+    color: var(--darkgray);
     line-height: 1.85;
-    font-size: 1rem;
   }
 
-  // 强调文字 - 更深
   & strong {
-    color: #111;
+    color: var(--dark);
     font-weight: 600;
   }
 
-  // 链接 - 蓝色系
-  & a {
-    color: #2563eb;
-    &:hover { color: #1d4ed8; }
-  }
-
-  // 列表项
   & li {
-    color: #444;
     line-height: 1.75;
   }
 
-  // 引用块 - 灰蓝调
   & blockquote {
-    color: #555;
-    border-left: 3px solid #94a3b8;
-    background: #f8fafc;
+    border-left: 3px solid var(--gray);
+    background: var(--highlight);
     padding: 0.8rem 1.2rem;
     border-radius: 0 6px 6px 0;
     margin: 1.2rem 0;
   }
 }
 
-// ========== 代码块 - Terminal 黑底风格 ==========
+// ========== 位置天气 - 底部居中 ==========
+.location-weather {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0 1rem 0;
+  padding: 1rem 0;
+  border-top: 1px solid var(--lightgray);
+}
+
+// ========== 代码块 - 自适应背景 ==========
 pre {
-  background: #1e1e1e !important;
-  color: #d4d4d4;
-  border: 1px solid #333;
+  background: var(--lightgray) !important;
+  color: var(--dark);
+  border: 1px solid var(--gray);
   border-radius: 8px;
   padding: 1rem 1.2rem;
   margin: 1.2rem 0;
@@ -90,107 +74,57 @@ pre {
 
   & > code {
     background: none !important;
-    color: #d4d4d4;
+    color: var(--dark);
     padding: 0;
     font-size: 0.88rem;
 
-    // 行号
     & > [data-line]::before {
-      color: #555;
+      color: var(--gray);
     }
 
-    // 高亮行
     & > [data-highlighted-line] {
-      background: #2a2d2e;
-      border-left: 3px solid #569cd6;
+      background: var(--highlight);
+      border-left: 3px solid var(--secondary);
     }
 
-    // 高亮字符
     & [data-highlighted-chars] {
-      background: #3a3d41;
+      background: var(--highlight);
       border-radius: 3px;
     }
   }
 }
 
-// 行内代码 - 浅灰底
+// 行内代码
 code {
-  background: #f1f5f9 !important;
-  color: #e06c75;
+  background: var(--lightgray) !important;
+  color: var(--secondary);
   padding: 0.15rem 0.4rem;
   border-radius: 4px;
   font-size: 0.9em;
-  border: 1px solid #e2e8f0;
+  border: 1px solid var(--gray);
 }
 
 // 代码标题栏
 figure[data-rehype-pretty-code-figure] {
   & > [data-rehype-pretty-code-title] {
-    background: #2d2d2d;
-    color: #aaa;
-    border: 1px solid #444;
+    background: var(--gray);
+    color: var(--light);
+    border: 1px solid var(--gray);
     border-bottom: none;
     border-radius: 8px 8px 0 0;
     padding: 0.4rem 1rem;
     font-size: 0.82rem;
   }
 
-  // 有标题时代码块去掉顶部圆角
   & > pre {
     border-radius: 0 0 8px 8px;
     margin-top: 0;
   }
 }
 
-// ========== 语法高亮颜色 (Terminal 风格) ==========
-[data-rehype-pretty-code-figure] {
-  // 关键字 - 蓝色
-  .token.keyword,
-  [data-highlighted-line] .token.keyword,
-  .hljs-keyword { color: #569cd6; }
-
-  // 字符串 - 橙绿
-  .token.string,
-  .hljs-string { color: #ce9178; }
-
-  // 注释 - 灰绿
-  .token.comment,
-  .hljs-comment { color: #6a9955; font-style: italic; }
-
-  // 函数名 - 黄色
-  .token.function,
-  .hljs-title { color: #dcdcaa; }
-
-  // 数字 - 浅绿
-  .token.number,
-  .hljs-number { color: #b5cea8; }
-
-  // 类型/类名 - 青色
-  .token.class-name,
-  .hljs-type { color: #4ec9b0; }
-
-  // 变量 - 浅蓝
-  .token.variable,
-  .hljs-variable { color: #9cdcfe; }
-
-  // 属性 - 浅蓝
-  .token.property,
-  .hljs-attr { color: #9cdcfe; }
-
-  // 标签名 - 棕色
-  .token.tag,
-  .hljs-name { color: #569cd6; }
-
-  // 运算符 - 灰色
-  .token.operator { color: #d4d4d4; }
-
-  // 标点
-  .token.punctuation { color: #808080; }
-}
-
 // ========== Mermaid 图表 ==========
 pre > code.mermaid {
-  background: #fff !important;
+  background: var(--light) !important;
   border-radius: 8px;
   padding: 1rem;
 }

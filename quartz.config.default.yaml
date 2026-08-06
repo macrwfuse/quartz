@@ -44,8 +44,8 @@ plugins:
   - source: "./quartz/plugins/local/location-weather"
     enabled: true
     layout:
-      position: header
-      priority: 5
+      position: afterBody
+      priority: 99
   - source: "@quartz-community/created-modified-date"
     enabled: true
     options:
@@ -59,8 +59,8 @@ plugins:
     enabled: true
     options:
       theme:
-        light: one-dark-pro
-        dark: one-dark-pro
+        light: github-light
+        dark: github-dark
       keepBackground: false
     order: 20
   - source: "@quartz-community/obsidian-flavored-markdown"
