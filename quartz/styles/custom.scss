@@ -1,3 +1,97 @@
 @use "./variables.scss" as *;
 
-// put your custom CSS here!
+// ========== 探索 (Explorer) - 去除加粗 ==========
+.explorer {
+  // 文件夹标题不加粗
+  .folder-container div > a {
+    font-weight: $normalWeight;
+  }
+
+  .folder-container div > button span {
+    font-weight: $normalWeight;
+  }
+
+  // 文件链接不加粗
+  .explorer-content ul li > a {
+    font-weight: $normalWeight;
+  }
+}
+
+// ========== 目录 (TOC) - 去除加粗 ==========
+.toc {
+  // TOC 标题不加粗
+  button.toc-header h3 {
+    font-weight: $normalWeight;
+  }
+
+  // TOC 链接不加粗
+  ul.toc-content.overflow > li > a {
+    font-weight: $normalWeight;
+  }
+}
+
+// ========== 博客风格排版 ==========
+.page {
+  // 文章区域更宽，适合博客阅读
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem;
+
+  // 文章标题更简洁
+  & article {
+    & > h1 {
+      font-size: 2rem;
+      font-weight: $semiBoldWeight;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--lightgray);
+      padding-bottom: 0.5rem;
+    }
+
+    // 段落间距更舒适
+    & p {
+      line-height: 1.8;
+      margin-bottom: 1.2rem;
+    }
+
+    // 列表项间距
+    & li {
+      line-height: 1.7;
+      margin-bottom: 0.3rem;
+    }
+  }
+}
+
+// 链接样式更简洁
+a {
+  &.internal {
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// 代码块更简洁
+pre {
+  border: 1px solid var(--lightgray);
+  border-radius: 4px;
+  margin: 1.5rem 0;
+}
+
+// 引用块更简洁
+blockquote {
+  border-left: 3px solid var(--secondary);
+  margin: 1.5rem 0;
+  padding: 0.5rem 1rem;
+  font-style: italic;
+}
+
+// 分割线更细
+hr {
+  margin: 2rem auto;
+  height: 1px;
+  background-color: var(--lightgray);
+}
