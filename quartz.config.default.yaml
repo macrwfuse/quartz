@@ -59,8 +59,8 @@ plugins:
     enabled: true
     options:
       theme:
-        light: github-light
-        dark: github-dark
+        light: one-dark-pro
+        dark: one-dark-pro
       keepBackground: false
     order: 20
   - source: "@quartz-community/obsidian-flavored-markdown"
