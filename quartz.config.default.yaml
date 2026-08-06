@@ -6,19 +6,19 @@ configuration:
   enablePopovers: true
   analytics:
     provider: plausible
-  locale: en-US
+  locale: zh-CN
   baseUrl: quartz.jzhao.xyz
   ignorePatterns:
     - private
     - templates
     - .obsidian
   theme:
-    fontOrigin: googleFonts
+    fontOrigin: local
     cdnCaching: true
     typography:
-      header: Schibsted Grotesk
-      body: Source Sans Pro
-      code: IBM Plex Mono
+      header: Microsoft YaHei
+      body: Microsoft YaHei
+      code: Microsoft YaHei
     colors:
       lightMode:
         light: "#faf8f8"
