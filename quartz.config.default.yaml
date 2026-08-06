@@ -44,8 +44,8 @@ plugins:
   - source: "./quartz/plugins/local/location-weather"
     enabled: true
     layout:
-      position: afterBody
-      priority: 99
+      position: beforeBody
+      priority: 1
   - source: "@quartz-community/created-modified-date"
     enabled: true
     options:

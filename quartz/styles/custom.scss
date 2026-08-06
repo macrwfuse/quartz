@@ -1,5 +1,32 @@
 @use "./variables.scss" as *;
 
+// ========== 位置天气 - 标题上方居中 ==========
+.location-weather {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 1.5rem 0;
+  padding: 0.5rem 0;
+}
+
+.lw-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.85rem;
+  color: var(--darkgray);
+  flex-wrap: wrap;
+}
+
+.lw-item {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.lw-icon {
+  font-size: 0.9rem;
+}
+
 // ========== 探索 (Explorer) - 去除加粗 ==========
 .explorer {
   .folder-container div > a {
